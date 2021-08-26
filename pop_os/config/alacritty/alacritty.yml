@@ -1,0 +1,11 @@
+window:
+        padding:
+                x: 8 
+                y: 8
+
+tabspaces: 4
+
+font:
+        size: 14.0
+
+background_opacity: 0.8
