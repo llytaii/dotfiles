@@ -1,0 +1,9 @@
+bgc "#282A36"
+pipewire &
+xsetroot -Breeze_Hacked left_ptr
+xbacklight -set 20
+setxkbmap de
+#awesome
+#frankenwm
+dwmstatus 2>&1 >/dev/null &
+dwm
