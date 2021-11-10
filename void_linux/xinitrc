@@ -1,9 +1,8 @@
-bgc "#282A36"
 pipewire &
 xsetroot -Breeze_Hacked left_ptr
-xbacklight -set 20
+xbacklight -set 30
 setxkbmap de
-#awesome
-#frankenwm
-dwmstatus 2>&1 >/dev/null &
+feh --bg-zoom image.png
+picom -CGf --no-fading-openclose --sw-opti &
+slstatus &
 dwm
