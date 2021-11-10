@@ -19,12 +19,29 @@ ssh_only = false
 disabled = false
 
 [battery]
-format = "[$percentage](bold green)"
+format = "[B:](dimmed white) [$symbol$percentage](bold green)"
 disabled = false
+discharging_symbol = "-"
+charging_symbol = "+"
+unknown_symbol = "?"
+
+[[battery.display]]
+threshold = 100
+style = "green"
+
+[[battery.display]]
+threshold = 30
+style = "yellow"
+
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
 
 [time]
-format = "[$time]($style)"
+format = "[T:](dimmed white) [$time]($style) "
 disabled = false
+style = "cyan"
 
 [directory]
 style = "purple"
