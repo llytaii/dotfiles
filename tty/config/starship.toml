@@ -1,0 +1,36 @@
+
+add_newline = true
+
+format = """
+$username$hostname$time$battery
+$directory
+$character
+"""
+[username]
+format = "[$user]($style)"
+style_user = "bold red"
+style_root = "bold red"
+show_always = true
+
+[hostname]
+format = "[@$hostname]($style) "
+style = "bold red"
+ssh_only = false
+disabled = false
+
+[battery]
+format = "[$percentage](bold green)"
+disabled = false
+
+[time]
+format = "[$time]($style)"
+disabled = false
+
+[directory]
+style = "purple"
+
+[character]
+success_symbol = ">(bold green)"
+error_symbol = ">(bold red)"
+
+
