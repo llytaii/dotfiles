@@ -1,4 +1,4 @@
-h## FIRST LINE/ROW: Info & Status
+## FIRST LINE/ROW: Info & Status
 
 format = """
 $username$hostname$cmd_duration
