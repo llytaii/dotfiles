@@ -1,0 +1,37 @@
+add_newline = false
+## FIRST LINE/ROW: Info & Status
+
+# $username$hostname$cmd_duration
+
+format = """
+$directory
+$character
+"""
+
+[username]
+format = "[$user]($style)@"
+style_user = "bold red"
+style_root = "bold red"
+show_always = true
+
+# Second param
+[hostname]
+format = "[$hostname]($style) "
+style = "bold dimmed red"
+ssh_only = false
+disabled = false
+
+[cmd_duration]
+min_time = 1
+format = "took [$duration]($style)"
+disabled = false
+
+# Third param
+[directory]
+style = "purple"
+truncate_to_repo = false
+truncation_length = 7
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
