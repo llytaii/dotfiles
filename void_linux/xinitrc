@@ -1,8 +1,0 @@
-pipewire &
-xsetroot -Breeze_Hacked left_ptr
-xbacklight -set 30
-setxkbmap de
-feh --bg-zoom image.png
-picom -CGf --no-fading-openclose --sw-opti &
-slstatus &
-dwm
