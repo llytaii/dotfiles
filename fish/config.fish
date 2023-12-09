@@ -1,4 +1,5 @@
 set fish_greeting
+set -gx XKB_DEFAULT_LAYOUT 'de'
 
 starship init fish | source
 zoxide init fish | source
