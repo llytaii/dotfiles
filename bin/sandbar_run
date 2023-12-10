@@ -1,0 +1,44 @@
+#!/bin/bash
+
+get_brightness() {
+    light -G | awk '{printf("%.0f", $1)}'
+}
+
+get_volume() {
+    pamixer --get-volume
+}
+
+get_ip_address() {
+    ip_address=$(ip route get 8.8.8.8 | awk '{print $7; exit}')
+    echo "${ip_address:-'-'}"
+}
+
+get_battery() {
+    battery_status=$(acpi -b)
+    battery_percent=$(echo "$battery_status" | grep -oP '\d+%' | tr -d '%')
+    echo "$battery_percent"
+}
+
+get_date_time() {
+    date +"%Y-%m-%d %H:%M:%S"
+}
+
+# Function to continuously update the status text
+run_bar() {
+    while true; do
+        brightness=$(get_brightness)
+        volume=$(get_volume)
+        ip_address=$(get_ip_address)
+        battery=$(get_battery)
+        date_time=$(get_date_time)
+
+        status_text="Vol: $volume% | IP: $ip_address | Bat: $battery% | $date_time"
+        
+        echo "all status $status_text"
+        sleep 1
+    done
+}
+
+# Run the function and pipe the output to your Wayland bar command
+run_bar | sandbar -hide-vacant-tags -no-title -font "Source Code Pro" -scale 1
+# run_bar | sandbar -hide-vacant-tags -no-title -font "Source Code Pro" -scale 1 -active-bg-color "#24273A" -inactive-bg-color "#24273A" -urgent-bg-color "#24273A" -title-bg-color "#24273A"

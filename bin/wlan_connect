@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Function to display available networks
+display_networks() {
+  echo "Scanning for available networks..."
+  iwctl station wlan0 scan
+  sleep 2
+  echo "Available networks:"
+  iwctl station wlan0 get-networks
+}
+
+# Function to connect to a network
+connect_to_network() {
+  read -p "Enter the network name (SSID) you want to connect to: " ssid
+  read -s -p "Enter the password for $ssid: " password
+  echo
+
+  # Try to connect
+  if iwctl station wlan0 connect "$ssid" -P "$password"; then
+    echo "Connected to $ssid successfully!"
+  else
+    echo "Error: Failed to connect to $ssid. Please check your credentials and try again."
+  fi
+}
+
+# Check if iwctl is installed
+if ! command -v iwctl &> /dev/null; then
+  echo "Error: iwctl not found. Please install iwd (iNet Wireless Daemon) and try again."
+  exit 1
+fi
+
+# Check if the wlan0 interface is up
+if ! iwctl station wlan0 show &> /dev/null; then
+  echo "Error: wlan0 interface not found or not available. Please make sure your wireless adapter is properly configured."
+  exit 1
+fi
+
+# Main script logic
+echo "Welcome to wlan_connect script!"
+
+while true; do
+  display_networks
+  connect_to_network
+
+  read -p "Do you want to connect to another network? (y/n): " choice
+  if [[ $choice != "y" ]]; then
+    echo "Exiting wlan_connect script. Goodbye!"
+    break
+  fi
+done
+
