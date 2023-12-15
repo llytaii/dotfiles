@@ -40,5 +40,5 @@ run_bar() {
 }
 
 # Run the function and pipe the output to your Wayland bar command
-run_bar | sandbar -hide-vacant-tags -no-title -font "Source Code Pro" -scale 1
+run_bar | sandbar -active-fg-color "#ABE9B3" -title-bg-color "#24273A" -urgent-bg-color "#24273A" -active-bg-color "#24273A" -inactive-bg-color "#24273A" -hide-vacant-tags -no-title -font "Source Code Pro" -scale 1
 # run_bar | sandbar -hide-vacant-tags -no-title -font "Source Code Pro" -scale 1 -active-bg-color "#24273A" -inactive-bg-color "#24273A" -urgent-bg-color "#24273A" -title-bg-color "#24273A"
