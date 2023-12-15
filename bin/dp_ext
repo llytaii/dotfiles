@@ -1,0 +1,3 @@
+!#/bin/sh
+way-displays -s DISABLED eDP-1
+sandbar_run &
