@@ -10,17 +10,25 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
+# Set background and border color
+riverctl background-color 0x24273A 
+riverctl border-color-focused 0xABE9B3 
+riverctl border-color-unfocused 0xCAD3F5
+
 # start sandbar
 sandbar_run &
 
+# start notification daemon
+mako --background-color "#24273A" --text-color "#CAD3F5" &
+
 # set wallpaper
-swaybg -i ~/pics/bg.png &
+# swaybg -i ~/pics/bg.png &
 
 # run way displays
 way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
 
 # bin bemenu
-riverctl map normal Super D spawn "bemenu-run -c --fn 'Source Code Pro [13]' --fb \"#24273a\" --ff \"#cad3f5\" --nb \"#24273a\" --nf \"#cad3f5\" --tb \"#24273a\" --hb \"#24273a\" --tf \"#ed8796\" --hf \"#eed49f\" --nf \"#cad3f5\" --af \"#cad3f5\" --ab \"#24273a\""
+riverctl map normal Super D spawn "bemenu-run --fn 'Source Code Pro [13]' --fb \"#24273a\" --ff \"#cad3f5\" --nb \"#24273a\" --nf \"#cad3f5\" --tb \"#24273a\" --hb \"#24273a\" --tf \"#ed8796\" --hf \"#eed49f\" --nf \"#cad3f5\" --af \"#cad3f5\" --ab \"#24273a\""
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn alacritty
@@ -154,10 +162,6 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
-# Set background and border color
-riverctl background-color 0x24273A 
-riverctl border-color-focused 0xABE9B3 
-riverctl border-color-unfocused 0x24273A
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 

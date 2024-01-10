@@ -2,7 +2,7 @@
 add_newline = true
 
 format = """
-$username$hostname
+$username$hostname$time$battery
 $directory
 $character
 """

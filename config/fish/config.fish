@@ -9,6 +9,6 @@ alias ls='exa -l'
 alias lt='exa -l --tree --level 2'
 alias rman='rusty-man'
 alias hx='helix'
-# alias yt='youtube-dl --download-archive ./archive.txt --ignore-errors --extract-audio --audio-format mp3  --output "%(title)s.%(ext)s" --yes-playlist (cat url)'
+alias yt_music='yt-dlp --download-archive ./archive.txt --ignore-errors --extract-audio --audio-format mp3  --output "%(title)s.%(ext)s" --yes-playlist (cat url)'
 
 thefuck --alias | source

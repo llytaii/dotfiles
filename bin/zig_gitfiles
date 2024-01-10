@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "zig-*" > .gitignore
+echo -e "* text=auto\n*.zig text=auto eol=lf" > .gitattributes

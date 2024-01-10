@@ -1,9 +1,5 @@
 #!/bin/bash
 
-get_brightness() {
-    light -G | awk '{printf("%.0f", $1)}'
-}
-
 get_volume() {
     pamixer --get-volume
 }
@@ -19,23 +15,17 @@ get_battery() {
     echo "$battery_percent"
 }
 
-get_date_time() {
-    date +"%Y-%m-%d %H:%M:%S"
-}
-
 # Function to continuously update the status text
 run_bar() {
     while true; do
-        brightness=$(get_brightness)
         volume=$(get_volume)
         ip_address=$(get_ip_address)
         battery=$(get_battery)
-        date_time=$(get_date_time)
 
-        status_text="Vol: $volume% | IP: $ip_address | Bat: $battery% | $date_time"
+        status_text="Vol: $volume% | IP: $ip_address | Bat: $battery%"
         
         echo "all status $status_text"
-        sleep 1
+        sleep 60
     done
 }
 
