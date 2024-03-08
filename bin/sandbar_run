@@ -10,9 +10,9 @@ get_ip_address() {
 }
 
 get_battery() {
-    battery_status=$(acpi -b)
-    battery_percent=$(echo "$battery_status" | grep -oP '\d+%' | tr -d '%')
-    echo "$battery_percent"
+    battery_status=$(pwr_stats -i status)
+    battery_percent=$(pwr_stats -i percentage)
+    echo "$battery_status$battery_percent"
 }
 
 # Function to continuously update the status text
@@ -21,11 +21,13 @@ run_bar() {
         volume=$(get_volume)
         ip_address=$(get_ip_address)
         battery=$(get_battery)
+        date=$(date)
+        light=$(light -G)
 
-        status_text="Vol: $volume% | IP: $ip_address | Bat: $battery%"
+        status_text="L: $light | B: $battery% | V: $volume% | $ip_address | $date"
         
         echo "all status $status_text"
-        sleep 60
+        sleep 1
     done
 }
 
