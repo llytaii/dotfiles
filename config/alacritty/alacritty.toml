@@ -1,74 +1,31 @@
-[[colors.indexed_colors]]
-color = "#F5A97F"
-index = 16
+# Colors (Gruvbox Material Medium Light)
 
-[[colors.indexed_colors]]
-color = "#F4DBD6"
-index = 17
-
-[colors.bright]
-black = "#5B6078"
-blue = "#8AADF4"
-cyan = "#8BD5CA"
-green = "#A6DA95"
-magenta = "#F5BDE6"
-red = "#ED8796"
-white = "#A5ADCB"
-yellow = "#EED49F"
-
-[colors.cursor]
-cursor = "#F4DBD6"
-text = "#24273A"
-
-[colors.dim]
-black = "#494D64"
-blue = "#8AADF4"
-cyan = "#8BD5CA"
-green = "#A6DA95"
-magenta = "#F5BDE6"
-red = "#ED8796"
-white = "#B8C0E0"
-yellow = "#EED49F"
-
-[colors.hints.end]
-background = "#A5ADCB"
-foreground = "#24273A"
-
-[colors.hints.start]
-background = "#EED49F"
-foreground = "#24273A"
-
-[colors.normal]
-black = "#494D64"
-blue = "#8AADF4"
-cyan = "#8BD5CA"
-green = "#A6DA95"
-magenta = "#F5BDE6"
-red = "#ED8796"
-white = "#B8C0E0"
-yellow = "#EED49F"
-
+# Default colors
 [colors.primary]
-background = "#24273A"
-bright_foreground = "#CAD3F5"
-dim_foreground = "#CAD3F5"
-foreground = "#CAD3F5"
+background = '#fbf1c7'
+foreground = '#654735'
 
-[colors.search.focused_match]
-background = "#A6DA95"
-foreground = "#24273A"
+# Normal colors
+[colors.normal]
+black   = '#654735'
+red     = '#c14a4a'
+green   = '#6c782e'
+yellow  = '#b47109'
+blue    = '#45707a'
+magenta = '#945e80'
+cyan    = '#4c7a5d'
+white   = '#eee0b7'
 
-[colors.search.matches]
-background = "#A5ADCB"
-foreground = "#24273A"
-
-[colors.selection]
-background = "#F4DBD6"
-text = "#24273A"
-
-[colors.vi_mode_cursor]
-cursor = "#B7BDF8"
-text = "#24273A"
+# Bright colors (same as normal colors)
+[colors.bright]
+black   = '#654735'
+red     = '#c14a4a'
+green   = '#6c782e'
+yellow  = '#b47109'
+blue    = '#45707a'
+magenta = '#945e80'
+cyan    = '#4c7a5d'
+white   = '#eee0b7'
 
 [font]
 size = 14.0
