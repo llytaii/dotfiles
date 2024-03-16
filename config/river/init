@@ -22,7 +22,7 @@ sandbar_run &
 mako --background-color "#24273A" --text-color "#CAD3F5" &
 
 # set wallpaper
-# swaybg -i ~/pics/bg.png &
+# swaybg -i ~/papes/dune.jpg &
 
 # run way displays
 way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1 &
@@ -34,7 +34,7 @@ riverctl map normal Super D spawn "bemenu-run --fn 'Source Code Pro [13]' --fb \
 riverctl map normal Super+Shift Return spawn alacritty
 
 # Super+Q to close the focused view
-riverctl map normal Super Q close
+riverctl map normal Super+Shift Q close
 
 # Super+Shift+E to exit river
 riverctl map normal Super+Shift E exit
